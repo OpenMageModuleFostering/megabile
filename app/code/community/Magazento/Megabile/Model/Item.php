@@ -21,8 +21,8 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
 
 
     public function prepareField($field) {
-      $field = htmlentities(trim($field));
-      $field = trim($field);
+//      $field = htmlentities(trim($field));
+//      $field = trim($field);
       return $field;
     }
 
@@ -51,7 +51,7 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
             }
 
             $io->streamOpen($file);	
-            $io->streamWrite('<?xml version="1.0" encoding="UTF-8"?>');
+            $io->streamWrite('<?xml version="1.0"?>');
             $io->streamWrite('<xml date="'.date('Y-m-d H:i').'">');
 
                 $io->streamWrite('<shop>' . "\n");
@@ -112,11 +112,11 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
                             }    
                             
                             if ($use_attributes) {
-                                $extra_description='\n\n';
+                                $extra_description='<br/><br/>';
                                 foreach ($attributes as $attributeItem) {
                                     $value_label = $Product->getResource()->getAttribute($attributeItem)->setStoreId($store_id)->getFrontend()->getValue($Product);             
                                     $value_name = $Product->getResource()->getAttribute($attributeItem)->setStoreId($store_id)->getData('frontend_label');            
-                                    if ($value_label && $value_name) $extra_description.= $value_name.": ".$value_label."\n";
+                                    if ($value_label && $value_name) $extra_description.= $value_name.": ".$value_label."<br/>";
                                 }  
                                 $description = $description.$extra_description;
                             }
@@ -135,6 +135,8 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
                                     foreach ($cat_ids as $cat_id) {
                                         $io->streamWrite("\t\t".'<cid>'.$cat_id.'</cid>'."\n");	
                                     }
+                                        $io->streamWrite("\t\t".'<cid>'.$root_category.'</cid>'."\n");	
+                                        
                                     $io->streamWrite("\t\t</categoryId>\n");	
                                     $io->streamWrite("\t\t".'<picture>'.$image.'</picture>'."\n");	
                                     $io->streamWrite("\t\t".'<name><![CDATA['.$this->prepareField($Product->getName()).']]></name>'."\n");	
