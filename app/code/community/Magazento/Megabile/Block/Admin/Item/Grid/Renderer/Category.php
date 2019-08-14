@@ -37,7 +37,7 @@ class Magazento_Megabile_Block_Admin_Item_Grid_Renderer_Category extends Mage_Ad
     {
         $category_id = $row->getData('root_category');
         $store_id = $row->getData('store_id');
-        $category = Mage::getModel('catalog/category') ->setStoreId($store_id) ->load($category_id);
+        $category = Mage::getModel('catalog/category')->setStoreId($store_id)->load($category_id);
         return $category->getName();
     }    
 }

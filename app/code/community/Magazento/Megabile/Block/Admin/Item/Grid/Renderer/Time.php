@@ -41,7 +41,7 @@ class Magazento_Megabile_Block_Admin_Item_Grid_Renderer_Time extends Mage_Adminh
      */
     public function render(Varien_Object $row)
     {
-        $time =  date('Y-m-d H:i:s', strtotime($row->getTime()) + Mage::getSingleton('core/date')->getGmtOffset());
+        $time =  date('Y-m-d H:i:s', strtotime($row->getFromTime()) + Mage::getSingleton('core/date')->getGmtOffset());
 
         return $time;
     }

@@ -29,9 +29,10 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
 
     public function buildXML($profile) {
         
-        $products                = explode(",",$profile->getProducts());
-//        $use_attributes         = $profile->getUseAttributes();
-//        $attributes             = explode(",",$profile->getAttributes());
+        $products               = explode(",",$profile->getProducts());
+        $use_attributes         = $profile->getUseAttributes();
+        $attributes             = explode(",",$profile->getAttributes());
+        $description_field      = $profile->getDescriptionField();
         $root_category          = $profile->getRootCategory();
         $file                   = $profile->getFilename();
         $store_id               = $profile->getStoreId();
@@ -98,7 +99,7 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
 //                                }
                               
                                 $url = $Product_parent->getProductUrl();
-                                $description = $Product_parent->getDescription();
+                                $description = $Product_parent->getData($description_field);
                                 $cat_ids = Mage::getResourceSingleton('catalog/product')->getCategoryIds($Product_parent);
                             } else {
 //                                if($Product->getImage() != 'no_selection') {
@@ -106,9 +107,21 @@ class Magazento_Megabile_Model_Item extends Mage_Core_Model_Abstract
 //                                }         
                                 
                                 $url = $Product->getProductUrl();
-                                $description = $Product->getDescription();
+                                $description = $Product->getData($description_field);
                                 $cat_ids = Mage::getResourceSingleton('catalog/product')->getCategoryIds($Product);
                             }    
+                            
+                            if ($use_attributes) {
+                                $extra_description='\n\n';
+                                foreach ($attributes as $attributeItem) {
+                                    $value_label = $Product->getResource()->getAttribute($attributeItem)->setStoreId($store_id)->getFrontend()->getValue($Product);             
+                                    $value_name = $Product->getResource()->getAttribute($attributeItem)->setStoreId($store_id)->getData('frontend_label');            
+                                    if ($value_label && $value_name) $extra_description.= $value_name.": ".$value_label."\n";
+                                }  
+                                $description = $description.$extra_description;
+                            }
+
+                            
 
                             if (($cat_ids) && ($price > 0)) {     
                                 $i++;                   

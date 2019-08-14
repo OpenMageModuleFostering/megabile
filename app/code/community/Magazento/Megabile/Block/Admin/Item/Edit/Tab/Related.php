@@ -31,11 +31,13 @@ class Magazento_Megabile_Block_Admin_Item_Edit_Tab_Related extends Mage_Adminhtm
      
         return parent::_prepareCollection();
     }
+    
     protected function _getStore()
     {
         $storeId = (int) $this->getRequest()->getParam('store', 0);
         return Mage::app()->getStore($storeId);
     }
+    
     protected function _prepareColumns() {
          $this->addColumn('in_products', array(
             'header_css_class' => 'a-center',

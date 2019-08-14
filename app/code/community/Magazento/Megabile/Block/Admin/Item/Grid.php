@@ -63,6 +63,10 @@ class Magazento_Megabile_Block_Admin_Item_Grid extends Mage_Adminhtml_Block_Widg
             'renderer'  => 'megabile/admin_item_grid_renderer_link',
         ));
         
+        $this->addColumn('description_field', array(
+            'header'    => Mage::helper('megabile')->__('Description'),
+            'index'     => 'description_field',
+        ));
         $this->addColumn('root_category', array(
             'header'    => Mage::helper('megabile')->__('Root Category'),
             'renderer'  => 'megabile/admin_item_grid_renderer_category',            

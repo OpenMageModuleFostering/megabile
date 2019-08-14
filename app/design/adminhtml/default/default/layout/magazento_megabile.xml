@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout>
+<!--    <default>
+        <reference name="head">
+            <action method="addCss"><name>magazento_megabile/style.css</name></action>
+        </reference>
+    </default>-->
+    
+    <megabile_admin_item_related>
+        <block type="core/text_list" name="root" output="toHtml"> 
+            <block type="megabile/admin_item_edit_tab_related" name="megabile.related.grid"/>
+            <block type="admin/widget_grid_serializer" name="related_grid_serializer">
+                <reference name="related_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>related.grid</grid_block_name>
+                        <data_callback>getSelectedrelatedProducts</data_callback>
+                        <hidden_input_name>links[related]</hidden_input_name>
+                        <reload_param_name>products_related</reload_param_name>
+                    </action>
+                </reference>
+            </block>
+        </block> 
+    </megabile_admin_item_related>
+        
+</layout>	

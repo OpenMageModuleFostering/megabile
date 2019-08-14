@@ -25,7 +25,7 @@ class Magazento_Megabile_Block_Admin_Item_Edit_Tab_Form extends Mage_Adminhtml_B
         
         $fieldset->addField('filename', 'text', array(
             'label' => Mage::helper('megabile')->__('Filename'),
-            'note'  => Mage::helper('pdfproduct')->__('example: megabile_general.xml'),            
+            'note'  => Mage::helper('megabile')->__('example: megabile_general.xml'),            
             'name'  => 'filename',
             'required' => true,
         ));
@@ -38,6 +38,16 @@ class Magazento_Megabile_Block_Admin_Item_Edit_Tab_Form extends Mage_Adminhtml_B
             'style' => 'width:100%',                
         ));
         
+        $fieldset->addField('description_field', 'select', array(
+            'label' => Mage::helper('megabile')->__('Description Field'),
+            'name'  => 'description_field',
+            'required' => true,
+            'options' => array(
+                'description'       => Mage::helper('megabile')->__('Description'),
+                'short_description' => Mage::helper('megabile')->__('Short Description'),
+            ),        
+        ));        
+        
         $fieldset->addField('products_for_export', 'select', array(
             'label' => Mage::helper('megabile')->__('Products For Export'),
             'name'  => 'products_for_export',
@@ -46,11 +56,11 @@ class Magazento_Megabile_Block_Admin_Item_Edit_Tab_Form extends Mage_Adminhtml_B
                 '0' => Mage::helper('megabile')->__('All Produdcts'),
                 '1' => Mage::helper('megabile')->__('Only Selected'),
             ),        
-            'note'  => Mage::helper('pdfproduct')->__('If "only selected" you will need to select products'),                  
+            'note'  => Mage::helper('megabile')->__('If "only selected" you will need to select products'),                  
         ));        
         
         $fieldset->addField('use_attributes', 'select', array(
-            'label' => Mage::helper('megabile')->__('Use attributes'),
+            'label' => Mage::helper('megabile')->__('Use Attributes'),
             'name'  => 'use_attributes',
             'required' => true,
             'options' => array(
@@ -60,8 +70,8 @@ class Magazento_Megabile_Block_Admin_Item_Edit_Tab_Form extends Mage_Adminhtml_B
         ));
         
         $fieldset->addField('product_attributes', 'multiselect', array(
-            'label' => Mage::helper('megabile')->__('Extra attributes'),
-            'note'  => Mage::helper('pdfproduct')->__('We will put them in the bottom of product description'),                    
+            'label' => Mage::helper('megabile')->__('Extra Attributes'),
+            'note'  => Mage::helper('megabile')->__('We will put them in the bottom of product description'),                    
             'name'  => 'product_attributes',
             'values' => Mage::getModel('megabile/data')->storeAttributes4Form(),            
             'required' => false,
