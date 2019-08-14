@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+    <name>megabile</name>
+    <version>0.0.1</version>
+    <stability>stable</stability>
+    <license>OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Export extension for Megabil.com </summary>
+    <description>Extension exports your magento products into one XML file. Which you can later upload Megabile.com.&#xD;
+In Megabile we glad to provide you the simpliest way for pulishing your store on iPhone, already customized for your brand. Get native iPhone App for your store without any coding!</description>
+    <notes>initial release. Post all issues or bugs at magazento.com/ticket</notes>
+    <authors><author><name>volgodark</name><user>volgodark</user><email>volgodark@gmail.com</email></author></authors>
+    <date>2013-03-27</date>
+    <time>12:13:39</time>
+    <contents><target name="magecommunity"><dir name="Magazento"><dir name="Megabile"><dir name="Block"><dir name="Admin"><dir name="Item"><dir name="Edit"><file name="Form.php" hash="42185aaf964eb7548d63adcb78aee8cf"/><dir name="Tab"><file name="Form.php" hash="909e180f887f8b8bfc7245dd7ce67a3b"/><file name="Related.php" hash="3a88d4f98943150c3f026e1b0d157a1e"/></dir><file name="Tabs.php" hash="0bc2280975101e493d3d4f3fdcad4d1e"/></dir><file name="Edit.php" hash="7a379e684384dca6803d1f3cc9dcce0b"/><dir name="Grid"><dir name="Renderer"><file name="Action.php" hash="cd843831c9e76dba9f23e68f2f843bb7"/><file name="Category.php" hash="798701d014e649cd8a20ed9d2268bea5"/><file name="Link.php" hash="aa44b8da85cdb8de90e63d5281cacdee"/><file name="Products.php" hash="973c9ec718838f76478aee086bf32e36"/><file name="Time.php" hash="63dce7ad91c469ec930c9cec623cfdbd"/></dir></dir><file name="Grid.php" hash="54baf42c62dccf7e3ff5962a51db6040"/></dir><file name="Item.php" hash="05fa7f0a72a5fe2ba082ce65ca6e5430"/></dir></dir><dir name="Helper"><file name="Data.php" hash="ecfa3ef0ca79a598483ee8da44a35a27"/><file name="Product.php" hash="04296e9936820fd93615cfcd2e61be31"/></dir><dir name="Model"><file name="Data.php" hash="7367397972efbf028d0f22eb9614fc55"/><file name="Item.php" hash="f33871d166c8073776599f02f019d903"/><dir name="Mysql4"><dir name="Item"><file name="Collection.php" hash="703fbd93edd66314356dd2ce4403b940"/></dir><file name="Item.php" hash="be3c74e0805a95224a21ecfceff8f7c6"/></dir></dir><dir name="controllers"><dir name="Admin"><file name="CatalogController.php" hash="8fe30b7db6e97dbc75cca66c66493c62"/><file name="ItemController.php" hash="0152694a48dd86a931d9c64a7c7ece4f"/></dir></dir><dir name="etc"><file name="config.xml" hash="f1e3c6926572db52bb0642e94e459917"/><file name="system.xml" hash="bb37fe164606effab9977ff4203ad5d6"/></dir><dir name="sql"><dir name="megabile_setup"><file name="mysql4-install-0.0.1.php" hash="f5ee26dcbc6c950abcf58c8e50bc5dca"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="magazento_megabile"><file name="cattree.phtml" hash="996f95313df817494a4f50190d7e0ac9"/></dir><file name="magazento_megabile.xml" hash=""/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Magazento_Megabile.xml" hash="822e0f1c604b5d762f33ee47b30cbff8"/></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="magazento_megabile"><file name="style.css" hash="f25650dc11cd81736bb880de1fa80e94"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.1</min><max>6.0.0</max></php></required></dependencies>
+</package>

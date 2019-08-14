@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/megabile",
+    "type": "magento-module",
+    "license": "OSL",
+    "homepage": "",
+    "description": "Export extension for Megabil.com ",
+    "authors": [
+    {
+        "name": "volgodark",
+        "email": "volgodark@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

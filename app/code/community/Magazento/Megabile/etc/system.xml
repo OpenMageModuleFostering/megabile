@@ -1,0 +1,45 @@
+<config>
+    <tabs>
+        <magazento translate="label">
+            <label>Magazento.com</label>
+            <sort_order>250</sort_order>
+        </magazento>
+    </tabs>
+   <sections>
+        <megabile translate="label" module="megabile">
+            <label>MEGABILE</label>
+            <tab>magazento</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General settings &amp; rules</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <product_robots translate="label">
+                            <label>Product Meta Robots Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment><![CDATA[ Override default <meta name="robots" content="*" /> with tag from product]]></comment>
+                            <sort_order>46</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_robots>
+                    </fields>
+                </general>
+            </groups>
+        </megabile>
+        
+        
+        
+    </sections>
+    
+</config>
