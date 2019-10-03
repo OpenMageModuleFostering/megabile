@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/megabile",
+    "name": "openmage-module-fostering\/megabile",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Export extension for Megabil.com ",
     "authors": [
